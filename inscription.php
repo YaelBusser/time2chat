@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 
 if(isset($_POST['forminscription']))
 {
@@ -93,7 +93,7 @@ if(isset($_POST['forminscription']))
 		<nav>
 			<ul class="police1">
 				<li><a href="index.html">Accueil</a></li>
-				<li><a href="">Discussion</a></li>
+				<li><a href="chat.php">Discussion</a></li>
 			</ul>
 		</nav>
 	</div>	

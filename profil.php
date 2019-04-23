@@ -3,7 +3,7 @@ session_start();
   //set headers to NOT cache a page
   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{
 		$getid = intval($_GET['id']);
@@ -35,7 +35,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
 			<ul class="police1">
 				<li><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>">Accueil</a></li>
 				<li><a href="profil.php?id=<?php echo $info_utilisateur['id']; ?>">Profil</a></li>
-				<li><a href="">Discussion</a></li>
+				<li><a href="chat.php">Discussion</a></li>
 			</ul>
 	</nav>
 	</div>

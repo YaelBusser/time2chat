@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{
@@ -10,29 +10,17 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
 		$requete_utilisateur -> execute(array($getid));
 		$info_utilisateur = $requete_utilisateur -> fetch();
 	}
-	if (isset($_GET["s"]) AND $_GET["s"] == "Rechercher")
+
+	if(isset($_POST['msg']) AND !empty($_POST['msg']))
 	{
-	 $_GET['terme'] = htmlspecialchars($_GET['terme']); //pour sécuriser le formulaire contre les intrusions html
-	 $terme = $_GET['terme'];
-	 $terme = trim($terme); //pour supprimer les espaces dans la requête de l'internaute
-	 $terme = strip_tags($terme); //pour supprimer les balises html dans la requête
+		$msg = htmlspecialchars($_POST['msg']);
+		$insertmsg = $bdd -> prepare('INSERT INTO chat(msg) VALUES(?)');
+		$insertmsg -> execute(array($msg));
 	}
 
-	if (isset($terme))
-		 {
-		  $terme = strtolower($terme);
-		  $select_terme = $bdd->prepare("SELECT titre, contenu FROM bdr WHERE titre LIKE ? OR contenu LIKE ?");
-		  $select_terme->execute(array("%".$terme."%", "%".$terme."%"));
-		 }
-		 else
-		 {
-		  $message = "Vous devez entrer votre requete dans la barre de recherche";
-		 }
 
 	if(isset($_SESSION['id']) AND $info_utilisateur['id'] == $_SESSION['id'])
-	{
-
-	
+	{	
 ?>
 <html>
 
@@ -41,6 +29,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<meta charset="utf-8">
 	<link rel="icon" type="icon" href="images/t2c.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +42,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
 			<ul class="police1">
 				<li><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>">Accueil</a></li>
 				<li><a href="profil.php?id=<?php echo $info_utilisateur['id']; ?>">Profil</a></li>
-				<li><a href="">Discussion</a></li>
+				<li><a href="chat.php">Discussion</a></li>
 			</ul>
 		</nav>
 	</div>	
@@ -61,12 +50,41 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=","","");
 
 	<h1 class="vw10 bleufonce ombre police1 aligntitre"><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>" class="anoneh1">Time<span class="bleuclair">2</span>Chat</a></h1>
 </div>
-	<div align="center">
-   <form action = "recherche.php" method = "get" align="center">
-   <input type = "search" name = "terme" style="width: 15vw; font-size: 2vw;" placeholder="Pseudonyme">
-   <input type = "submit" name = "s" value = "Rechercher" style="font-size: 2vw;">
-  </form>
-</div>
+		</div>
+			<div id="message">
+				<div align="center">
+			<?php
+
+			$tous_les_msg =  $bdd -> query('SELECT * FROM chat ORDER BY id DESC LIMIT 0, 5');
+			while($msg = $tous_les_msg -> fetch())
+			{
+			?>
+			<div align="center">
+				<div style="width: 25%; background-color: red;">
+					<div align="left">
+				<p><?php if(isset($_POST['pseudo'])){ echo $_POST['pseudo']; } ; ?></b> : <?php echo $msg['msg']; ?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+			<?php
+			}
+			?>
+		</div>
+
+					<div align="center">
+				<form method="post" action="">
+						<textarea type="text" name="msg" placeholder="MESSAGE"></textarea>
+						<input type="submit" name="" value="Envoyer">
+
+				</form>
+<script type="text/javascript">
+	setInterval('chargement_message()', 1500);
+	function chargement_message(){
+		$('#message').load('chargement_message.php');
+	}
+</script>
+
 <?php
 }
 else
