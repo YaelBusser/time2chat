@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;","","");
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 
 	if(isset($_POST['formconnect']))
 	{
@@ -55,7 +55,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;","","");
 			</ul>
 		</nav>
 	</div>	
-	<h1 class="centre police1" style="color: white;">Connexion</h1>
+	<h1 class="centre police1 ombre" style="color: white;">Connexion</h1>
 	<form method="POST" action="">
 		<div align="center">
 		<table>

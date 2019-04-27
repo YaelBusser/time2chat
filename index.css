@@ -1,4 +1,4 @@
-@font-face
+@font-face 
 {
     font-family: 'acmeregular';
     src: url('fonts/Acme-Regular-webfont.eot');
@@ -12,7 +12,7 @@
 }
 body
 {
-	background: url(images/t2c.png) fixed;
+	background: url(images/blanc.jpg) fixed;
 	overflow-x: hidden;
 	width: 100%;
 	height: 100%;
@@ -34,9 +34,7 @@ body
 	bottom: 0;
 	height: 100%;
 	width: 15%;
-  border-right: 3px solid #fecf6a;
-  border-top: 3px solid #fecf6a;
-  border-bottom: 3px solid #fecf6a;
+	border: 3px solid #666666;
 	background-color: grey;
 	position: absolute;
 }
@@ -65,7 +63,7 @@ body
 	width: 17.5vw;
 	font-size: 1.5vw;
 }
-nav ul
+nav ul 
 {
 	list-style-type: none;
 }
@@ -86,14 +84,14 @@ nav
 	margin-top: 5vw;
 }
 .aligntitre
-{
+{	
 	margin: auto;
 }
 .flex
 {
 	display: flex;
 }
-nav ul li a
+nav ul li a 
 {
 	text-decoration: none;
 }
@@ -136,33 +134,4 @@ a
 .marginerreur
 {
 	margin-left: 15%;
-}
-
-
-
-
-
-//je vais mettre mes changements ici pour pas comfondre (MathsVeille)
-
-
-.accueil
-{
-	font-size: 1.7em;
-}
-.discussion
-{
-  font-size: 1.7em;
-}
-
-.accueil:hover
-{
-	color: #FFDC00;
-}
-.discussion:hover
-{
-	color: #FFDC00;
-}
-.rechercher
-{
-  margin-top: -3%;
 }

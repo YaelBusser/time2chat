@@ -3,16 +3,16 @@ session_start();
   //set headers to NOT cache a page
   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;","","");
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{
 		$getid = intval($_GET['id']);
 		$requete_utilisateur = $bdd -> prepare("SELECT * FROM inscription WHERE id = ? ");
 		$requete_utilisateur -> execute(array($getid));
 		$info_utilisateur = $requete_utilisateur -> fetch();
-	}
-
-	if(isset($_SESSION['id']) AND $info_utilisateur['id'] == $_SESSION['id'])
+	
+}
+	if(isset($_SESSION['id']) AND $info_utilisateur['id'] == $_SESSION['id'] ) 
 	{
 
 	
@@ -39,7 +39,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;","","");
 			</ul>
 	</nav>
 	</div>
-	<h1 class="centre police1" style="color: white; font-size: 3vw; text-decoration: underline;">Votre Profil :</h1>
+	<h1 class="centre police1 ombre" style="color: white; font-size: 3vw; text-decoration: underline;">Votre Profil :</h1>
 	<div style="margin-left: 35%">
 	<div style="display: flex;">
 		<?php
@@ -56,12 +56,12 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;","","");
 		</tr>
 		<tr>
 			<td>
-	<p><?php echo '<h1 style="color: white;" class="police1">Votre pseudo : '.$info_utilisateur['pseudo'].'</h1>'; ?></p>
+	<p><?php echo '<h1 style="color: white;" class="police1 ombre">Votre pseudo : '.$info_utilisateur['pseudo'].'</h1>'; ?></p>
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<p><?php echo '<h1 style="color: white;" class="police1">Votre mail : '.$info_utilisateur['mail'].'</h1>'; ?></p>
+			<p><?php echo '<h1 style="color: white;" class="police1 ombre">Votre mail : '.$info_utilisateur['mail'].'</h1>'; ?></p>
 		</td>		
 	</tr>
 	<tr>
