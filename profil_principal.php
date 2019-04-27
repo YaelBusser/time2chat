@@ -3,7 +3,6 @@ session_start();
   //set headers to NOT cache a page
   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{
 		$getpseudo = $_GET['pseudo'];
