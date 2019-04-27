@@ -34,7 +34,9 @@ body
 	bottom: 0;
 	height: 100%;
 	width: 15%;
-	border: 3px solid #666666;
+  border-right: 3px solid #fecf6a;
+  border-top: 3px solid #fecf6a;
+  border-bottom: 3px solid #fecf6a;
 	background-color: grey;
 	position: absolute;
 }
