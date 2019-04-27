@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{
@@ -49,6 +49,14 @@ session_start();
 	<div class="flex">
 
 	<h1 class="vw10 bleufonce ombre police1 aligntitre"><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>" class="anoneh1">Time<span class="bleuclair">2</span>Chat</a></h1>
+</div>
+	<nav>
+		<div align="center">
+	 <form action = "search.php" method = "GET" align="center">
+   	 <input type="text" name="pseudo_recherche">
+   	 <input type="submit" name="rechercher" value="Rechercher">
+  </form>
+</nav>
 </div>
 		</div>
 								<div id="message">
