@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
+
 
 if(isset($_POST['forminscription']))
 {
