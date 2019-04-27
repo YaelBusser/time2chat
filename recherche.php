@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;","","");
+
 
 	if(isset($_GET['id']) AND $_GET['id'] > 0)
 	{

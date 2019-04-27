@@ -1,7 +1,7 @@
 <?php
 session_start();
   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
-$bdd = new PDO("mysql:host=sql310.epizy.com;","","");
+
 
 
 	if(isset($_SESSION['pseudo']))

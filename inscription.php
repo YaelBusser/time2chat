@@ -1,7 +1,5 @@
 <?php
 
-$bdd = new PDO("mysql:host=sql310.epizy.com;","","");
-
 if(isset($_POST['forminscription']))
 {
 		$pseudo = htmlspecialchars($_POST['pseudo']);
