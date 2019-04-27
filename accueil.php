@@ -21,7 +21,7 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;","","");
 	$insertpseudo -> execute(array($info_utilisateur['pseudo']));
 
 	if(isset($_SESSION['id']) AND $info_utilisateur['id'] == $_SESSION['id'])
-	{	
+	{
 ?>
 <html>
 
@@ -46,16 +46,16 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;","","");
 				<li><a href="chat.php">Discussion</a></li>
 			</ul>
 		</nav>
-	</div>	
+	</div>
 	<div class="flex">
 
 	<h1 class="vw10 bleufonce ombre police1 aligntitre"><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>" class="anoneh1">Time<span class="bleuclair">2</span>Chat</a></h1>
 </div>
 		</div>
-		<div style="border: 1px solid red; background-color: white; width: 50%; height: 50%;margin-left: 25%; overflow: scroll; overflow-x: hidden;">
+		<div style="border: 3px solid color:#0074D9; background-color: white; width: 50%; height: 50%;margin-left: 25%; overflow: scroll; overflow-x: hidden;">
 								<div id="message">
-								
-								<?php 
+
+								<?php
 								$tous_les_msg =  $bdd -> query('SELECT * FROM chat ORDER BY id ');
 								while($msg = $tous_les_msg -> fetch())
 								{
