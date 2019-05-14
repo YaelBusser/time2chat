@@ -1,7 +1,7 @@
 <?php
 session_start();
   header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
-
+$bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
 
 
 	if(isset($_SESSION['pseudo']))
@@ -73,21 +73,33 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<meta charset="utf-8">
 	<link rel="icon" type="icon" href="images/t2c.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body>
-	<div class="bandegauche z1">
-		<h1 class="centre bleufonce ombre vw2 police1 "><a href="accueil.php?id=<?php echo $utilisateur['id']; ?>" class="anoneh1">Time<span class="bleuclair">2</span>Chat</a></h1>
-		<div align="center">
-		<p class="police1 btnlog vw1dot3 marginflex center"><a href="deconnexion.php" class="anone">Se déconnecter</a></p>
+	<div class="bandehaut z1">
+				<div class="flex">
+
+					<h1 class="ombre1 police1 aligntitre em"><a href="accueil.php?id=<?php echo $info_utilisateur['id']; ?>" class="anoneh1">Time<span class="blue">2</span>Chat</a></h1>
+					<div class="accueilspace"></div>
+				
+					<p class="police1 em1 menu"><a href="accueil.php?id=<?php echo $_SESSION['id']; ?>" class="anone blanc">Accueil</a></p>
+					<div class="space2"></div>
+					<p class="police1 em1 menu"><a href="profil.php?id=<?php echo $_SESSION['id']; ?>" class="anone blanc">Profil</a></p>
+					<div class="space2"></div>
+					<p class="police1 em1 menu"><a href="discussion.php?id=<?php echo $_SESSION['id']; ?>" class="anone blanc">Discussion</a></p>
+					<div class="espace"></div>
+					 <form class="menu em1" action="search.php" method="GET">
+					   	 <input type="text" name="pseudo_recherche" style="width: 9vw; height: 0.8vw;">  
+					   	 <input type="image" name="rechercher" src="images/search.png"  style="margin-left: -1vw; margin-bottom: -0.1vw; width: 0.8vw; height: 0.8vw;">
+				   	</form>
+
+					<div class="space1"></div>
+
+					<p class="police1 em1 menu"><a href="deconnexion.php" class="anone blanc">Se déconnecter</a></p>
+
+				</div>	
 	</div>
-		<nav>
-			<ul class="police1">
-				<li><a href="accueil.php?id=<?php echo $utilisateur['id']; ?>">Accueil</a></li>
-				<li><a href="profil.php?id=<?php echo $utilisateur['id']; ?>">Profil</a></li>
-				<li><a href="chat.php">Discussion</a></li>
-			</ul>
-	</nav>
-	</div>	
+	<br><br><br><br><br><br><br><br>
 	<h1 class="centre police1" style="color: white; font-size: 3vw; text-decoration: underline;">Edition de mon profil:</h1>
 	<div align="center">
 	<form method="POST" action="" enctype="multipart/form-data">

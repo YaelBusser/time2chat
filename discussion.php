@@ -55,11 +55,34 @@ $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_2376
 							<p class="police1 em1 menu"><a href="deconnexion.php" class="anone blanc">Se déconnecter</a></p>
 				</div>	
 	</div>
-		<div class="separation"></div>
-	<div class="blocdumilieu">
-		
+<br><br><br><br><br><br><br><br>
+		<div style="border: 1px solid black; background-color: #4d4d4d; width: 50%; height: 50%;margin-left: 25%; overflow: scroll; overflow-x: hidden;">
+							<div id="message">
+							    <?php 
+							    $tous_les_msg =  $bdd -> query('SELECT * FROM chat ORDER BY id DESC LIMIT 0, 15');
+							    while($msg = $tous_les_msg -> fetch())
+							    {
+							    ?>
+							      <div align="left">
+							      <p class="police1 blanc"><a href="profil_principal.php?pseudo=<?php echo $msg['pseudo'] ?>&avatar=<?php echo $msg['avatar'] ?>"><img style="border-radius: 50%;" src="avatars/<?php  echo $msg['avatar']; ?>" width="50" height="50"></a><span style="font-family: arial; text-decoration: underline;"><a href="profil_principal.php?pseudo=<?php echo $msg['pseudo'] ?>&avatar=<?php echo $msg['avatar'] ?>"><?php echo $msg['pseudo']; ?></a></span><span style class="noir">:</span><br><span style="margin-left: 5.5%;"><?php echo $msg['msg']; ?></span></p>
+							      </div>
+							    <?php
+							    }
+							    ?>
+							  </div>
+							</div>
+							
+					</div>
+						
+					<div align="center">
+				<form method="post" action="" name="chat">
+						<input type="text" name="msg" placeholder="Envoyer un message" autocomplete="off" style="width: 47.5vw">
+						<input type="image" name="" src="images/msg.png" alt="Envoyer" style="width: 2vw; height: 2vw;">
+				</form>
+			</div>
 
-	</div>
+
+
 <?php
 }
 else
@@ -67,5 +90,16 @@ else
 	echo '<h1 style="text-align: center;">Erreur dans l\'url !</h1>';
 }
 ?>
+
+<script type="text/javascript">
+        setInterval('chargement_message()', 500);
+        function chargement_message()
+        {
+
+        	$('#message').load('chargement_message.php');
+        
+        }
+        document.chat.msg.focus();
+</script>
 </body>
 </html>

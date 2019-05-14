@@ -12,7 +12,7 @@
 }
 body
 {
-	background: url(images/blanc.jpg) fixed;
+	background-color: #313131;
 	overflow-x: hidden;
 	width: 100%;
 	height: 100%;
@@ -27,32 +27,29 @@ body
 {
 	font-size: 7vw;
 }
-.bandegauche
+.bandehaut
 {
-	left: 0;
 	top: 0;
-	bottom: 0;
-	height: 100%;
-	width: 15%;
-	border: 3px solid #666666;
-	background-color: grey;
+	margin-left: 11.4vw;
+	width: 74.5vw;
+	height: 5.5vw;
+	margin-top: 0%;
+	background-color: #4d4d4d;
 	position: absolute;
+	border-bottom-left-radius: 1%;
+	border-bottom-right-radius: 1%;
 }
 .police1
 {
 	font-family: acmeregular;
 }
-.bleuclair
-{
-	color: #66ccff;
-}
-.bleufonce
-{
-	color: #0088cc;
-}
 .ombre
 {
-	text-shadow: 0 0 3px black, 0 0 5px black;
+	text-shadow: 0 0 3px black, 0 0 3px black;
+}
+.ombre1
+{
+	text-shadow: 0 0 3px black, 0 0 3px black;
 }
 .vw2
 {
@@ -85,7 +82,7 @@ nav
 }
 .aligntitre
 {	
-	margin: auto;
+	margin-left: 1%;
 }
 .flex
 {
@@ -98,7 +95,7 @@ nav ul li a
 .anoneh1
 {
 	text-decoration: none;
-	color: #0088cc;
+	color: #999999;
 }
 a
 {
@@ -113,7 +110,8 @@ a
 	border: 1px solid white;
 	background-color: white;
 	border-radius: 10%;
-	padding: 2%;
+	height: 1vw;
+
 }
 .anone
 {
@@ -134,4 +132,120 @@ a
 .marginerreur
 {
 	margin-left: 15%;
+}
+.top
+{
+	margin-left: 50%;
+}
+.blocdumilieu
+{
+	border: 1px solid black;
+	width: 74.4vw;
+	height: 42.9vw;
+	margin-left: 11.5vw;
+}
+.space
+{
+	margin-left: 0.5vw;
+}
+.em
+{
+	font-size: 2vw;
+}
+.em1
+{
+	font-size: 1vw;
+}
+.separation
+{
+	margin-top: 6vw;
+}
+.accueilspace
+{
+	margin-left: 5vw;	
+}
+.h1
+{
+	font-size: 2vw;
+}
+.space1
+{
+	margin-left: 5vw;
+}
+.blanc
+{
+	color: white;
+}
+a:hover
+{
+	color: #d9d9d9;
+}
+h1 a:hover
+{
+	color: #d8e6f3;
+}
+.space2
+{
+	margin-left: 2vw;
+}
+.menu3
+{
+	margin-top: 1.8vw;
+}
+.menu
+{
+	margin-top: 2vw;
+}
+.menu1
+{
+	margin-top: 1.45vw;
+}
+.blue
+{
+	color: #bfbfbf;
+}
+.espace
+{
+	margin-left: 25vw;
+	margin-top: 2.5%;
+}
+.noir
+{
+	color: black;
+}
+.blocprofil
+{
+	border: 1px solid black;
+	width: 50vw;
+	height: 10vw;
+	background-color: #4d4d4d;
+	border-radius: 1%;
+}
+@media screen and (max-width: 800px)
+{
+	.blocprofil
+	{
+		width: 55vw;
+		height: 15vw;
+	}
+	.bandehaut
+	{
+		width: 78vw;
+	}
+}
+div img:hover
+{
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+.btnmodifier
+{
+	border: 1px solid black;
+	padding: 0.3vw;
+	background-color: #313131;
+	border-radius: 5%;
+}
+.btnmodifier:hover
+{
+	background-color: #1a1a1a;
 }

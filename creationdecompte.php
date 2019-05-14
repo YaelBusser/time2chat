@@ -4,22 +4,30 @@
 	<link rel="stylesheet" type="text/css" href="index.css">
 	<meta charset="utf-8">
 	<link rel="icon" type="icon" href="images/t2c.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body>
-	<div class="bandegauche z1">
-		<h1 class="centre bleufonce ombre vw2 police1 "><a href="index.html" class="anoneh1">Time<span class="bleuclair">2</span>Chat</a></h1>
-		<div class="flex">
-			<p class="police1 btnlog vw1dot3 marginlog"><a href="inscription.php" class="anone">Inscription</a></p>
-			<p class="police1 btnlog vw1dot3 marginflex"><a href="Connexion.php" class="anone">Se connecter</a></p>
-		</div>
-		
-			<nav>
-				<ul class="police1">
-					<li><a href="index.html">Accueil</a></li>
-					<li><a href="chat.php">Discussion</a></li>
-				</ul>
-			</nav>
-		</div>
+	<div class="bandehaut z1">
+				<div class="flex">
+
+					<h1 class="ombre1 police1 aligntitre em"><a href="index.html" class="anoneh1">Time<span class="blue">2</span>Chat</a></h1>
+					<div class="accueilspace"></div>
+				
+					<p class="police1 em1 menu"><a href="index.html" class="anone blanc">Accueil</a></p>
+					<div class="espace"></div>
+					 <form class="menu em1" action="search.php" method="GET">
+					   	 <input type="text" name="pseudo_recherche" style="width: 9vw; height: 0.8vw;">  
+					   	 <input type="image" name="rechercher" src="images/search.png"  style="margin-left: -1vw; margin-bottom: -0.1vw; width: 0.8vw; height: 0.8vw;">
+				   	</form>
+
+					<div class="space1"></div>
+
+							<p class="police1 em1 menu"><a href="connexion.php" class="anone blanc">Se connecter</a></p>
+							<div class="space2"></div>
+
+							<p class="police1 em1 menu"><a href="inscription.php" class="anone blanc">Inscription</a></p>
+				</div>	
+	</div>
 		<div style="margin-left: 17%; margin-top: 15%;" id="creation">
 			<h1 class="police1 ombre centre" style="color: white; font-size: 3vw;">Félicitation, vous venez de créer un compte !<br><br>
 				<a href="connexion.php" style="color: white;">Se connecter</a>
