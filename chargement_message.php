@@ -1,6 +1,6 @@
 <div id="message">
     <?php 
-        $bdd = new PDO("mysql:host=sql310.epizy.com;dbname=epiz_23760423_bdd","epiz_23760423","AoOnbuefkx7");
+	
 							    $tous_les_msg =  $bdd -> query('SELECT * FROM chat ORDER BY id DESC LIMIT 0, 15');
 							    while($msg = $tous_les_msg -> fetch())
 							    {
